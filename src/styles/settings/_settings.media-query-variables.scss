@@ -1,0 +1,58 @@
+// // media queries @mixin
+// @mixin mq($breakpointwidth) {
+//   @media only screen and ($breakpointwidth) {
+//     @content;
+//   }
+// }
+
+// /* ------------ min-width ------------- */
+
+// // 480px +
+// // 'mobile' breakpoint
+// $small-and-above: 'min-width:' + $xsmall;
+
+// // 768px +
+// // 'tablet' breakpoint
+// $tablet-and-above: 'min-width:' + $small;
+
+// // 992px +
+// $desktop-and-above: 'min-width:' + $med;
+
+// // 1200px +
+// $large-and-above: 'min-width:' + $large;
+
+// // 1600px +
+// // 'xlarge' breakpoint
+// $xlarge-and-above: 'min-width:' + $xlarge;
+
+
+// /* ------------- range -------------- */
+
+// // 768px - 991px
+// $tablet: 'min-width:' + $small + ') and (max-width:' + $med-max;
+
+// // 992px - 1199px
+// // 'desktop' breakpoint
+// $desktop: 'min-width:' + $med + ') and (max-width:' + $large-max;
+
+// // 1200px - 1599px
+// // 'large' breakpoint
+// $large-only: 'min-width:' + $large + ') and (max-width:' + $xlarge-max;
+
+
+// /* ------------ max-width ------------- */
+// /* PLEASE AVOID MAX WIDTH MEDIA QUERIES & CHOOSE MIN-WIDTH WHEREEVER POSSIBLE */
+// // 0 - 480px
+// $x-small-only: 'max-width:' + $xsmall;
+
+// // *** I think we might be able to remove other max-width MQ
+// //but this one makes sense to target only mobile
+// // 0 - 767px
+// $mobile: 'max-width:' + $small-max;
+
+// // 0 - 991px
+// $tablet-and-below: 'max-width:' + $med-max;
+
+// // 0 - 1199px
+// // @TODO: do we need this?
+// $desktop-and-below: 'max-width:' + $large-max;

@@ -1,0 +1,118 @@
+body {
+  padding-bottom: 90vh;
+}
+
+.size-guide-table {
+  margin: 2rem 0 2rem 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  color: #000;
+
+  @include respond(tab-port) {
+    margin: 2rem;
+    overflow: hidden;
+  }
+
+  &__table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1.4rem;
+    margin: 0 auto;
+  }
+
+  &__table-body {
+    position: relative;
+  }
+
+  &__table-header { // th -> scope="col"
+    background-color:rgba(250,	250,	250, .75);
+    padding: 2rem 0 0;
+    text-align: left;
+
+    &--is-sticky {
+      position: sticky;
+      top: 0;
+
+      &:first-of-type {
+        left: 0;
+      }
+    }
+  }
+
+  &__table-row { // tr
+
+    &:nth-child(even) {
+      background-color:rgba(250,	250,	250, .75);
+    }
+
+    &:nth-child(odd) {
+      background-color: rgba(242, 242, 242, .75);
+    }
+
+    &:hover {
+      background-color: rgba(217, 217, 217, 1);
+    }
+  }
+
+  &__table-row-header { // th -> scope="row"
+    text-align: center;
+
+    &--is-sticky {
+      position: sticky;
+      left: 0;
+      top: auto;
+    }
+  }
+
+  &__table-cell { // td
+    text-align: center;
+    border-left: 1px solid #fff;
+  }
+
+  .size-guide-table__table-header,
+  .size-guide-table__table-cell,
+  .size-guide-table__table-row-header {
+    font-weight: normal;
+    min-width: 10rem;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .size-guide-table__table-cell,
+  .size-guide-table__table-row-header {
+    padding: 2rem;
+  }
+
+  [scope="col"], // specificity enables this to work
+  [scope="row"],
+  .size-guide-table__table-cell {
+    &:hover {
+      background-color: rgba(217, 217, 217, 1);
+
+      &:after {
+        background-color: rgba(217, 217, 217, 1);
+        content: '';
+        height: 10000px;
+        left: 0;
+        position: absolute;
+        top: -5000px;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+
+    &:focus {
+      &:before {
+        background-color: rgba(217, 217, 217, 1);
+        content: '';
+        height: 100%;
+        top: 0;
+        left: -5000px;
+        position: absolute;
+        width: 10000px;
+        z-index: -1;
+      }
+    }
+  }
+}
